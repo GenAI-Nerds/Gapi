@@ -57,7 +57,7 @@ docker logs gapi
 ## Run on Boot
 For now you can just run "docker start gapi" in your OS startup script
 
-## Key / Default Micro Services
+## Key / Default Micro Services via Docker (more coming)
 
 Piper TTS
 If you want to use the Text to Speech Component run the following commands. Add "docker start gapi-pipertts" to your startup script too!
