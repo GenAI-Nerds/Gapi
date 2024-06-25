@@ -29,7 +29,7 @@ Steps to install Gapi (swap ~/gapiData in all the steps as you please)
 ```    
 2) Download the starting json files
 ```sh
-    curl -L -O https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiStartingData.zip
+    curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiStartingData.zip -o ~/gapiData/conf/gapiStartingData.zip
 ```    
 3) Unzip them
 ```sh
