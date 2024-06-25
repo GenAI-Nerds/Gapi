@@ -5,6 +5,8 @@
 
 [1 Min. Video Intro](https://www.youtube.com/watch?si=8Bt47WdUtiTaSZQx&v=6u7_-O1PCt8&feature=youtu.be)
 
+[Docs](https://genainerds.com/#/Docs)
+
 ![Gif Teaser](https://genainerds.com/assets/img/GapiGIF.gif)
 
 Goal: Be the Fastest Way to Prototype and Integrate GenAI on the Edge.
