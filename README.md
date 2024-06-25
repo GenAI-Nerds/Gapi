@@ -41,7 +41,7 @@ Steps to install Gapi (swap ~/gapiData in all the steps as you please)
 ```
 5) Create a container, map network and bind the folder we created above
 ```sh
-    docker create --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
+    docker create --name gapi --network host -v ~/gapiData:/opt/gapi/data genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 ```
 6) Start the docker container
 ```sh
