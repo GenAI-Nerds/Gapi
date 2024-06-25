@@ -49,6 +49,9 @@ Steps to install Gapi (swap ~/gapiData in all the steps as you please)
 ```
 
 ## Problems?
+~/gapiData is your friend. It has all the persistant data plus gapi.log and gapi-error.log from the application server itself.
+It also has folders for special Docker Micro Service that have the respective configuration and commensurate logging
+
 Post what the logs show as well as ~/gapiData/conf/gapi.log
 ```sh
 docker logs gapi
@@ -61,6 +64,7 @@ For now you can just run "docker start gapi" in your OS startup script
 
 Piper TTS
 If you want to use the Text to Speech Component run the following commands. Add "docker start gapi-pipertts" to your startup script too!
+Note: in ~/gapiData/ there is a Gapi-PiperTTS folder. In there is a config.txt file that has the websocket url for this container to connect to plus the Micro Service key. So once you start it up you should see it Online in the Micro Services tab of the Gapi UI.
 ```sh
 docker pull genainerds/gapi:pipertts
 docker create --runtime nvidia --name gapi-pipertts --network host -v ~/gapiData/Gapi-PiperTTS:/home/TTS/vdata genainerds/gapi:pipertts /bin/bash -c "cd /home/TTS && python3 gapi-ms.py [] []"
