@@ -23,31 +23,31 @@ Goal: Be the Fastest Way to Prototype and Integrate GenAI on the Edge.
 Steps to install Gapi (swap ~/gapiData in all the steps as you please)
 0) Dependencies (Follow Docker install before moving forward)
 ```sh
-    apt get -y install curl unzip
+apt get -y install curl unzip
 ```
 1) Create a place where your persistent data wil live
 ```sh
-    mkdir ~/gapiData
+mkdir ~/gapiData
 ```    
 2) Download the starting json files
 ```sh
-    curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiStartingData.zip -o ~/gapiData/gapiStartingData.zip
+curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiStartingData.zip -o ~/gapiData/gapiStartingData.zip
 ```    
 3) Unzip them
 ```sh
-    unzip ~/gapiData/gapiStartingData.zip
+unzip ~/gapiData/gapiStartingData.zip
 ``` 
 4) Pull it
 ```sh
-    docker pull genainerds/gapi:arm64
+docker pull genainerds/gapi:arm64
 ```
 5) Create a container, map network and bind the folder we created above
 ```sh
-    docker create --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
+docker create --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 ```
 6) Start the docker container
 ```sh
-    docker start gapi
+docker start gapi
 ```
 
 ## Problems?
