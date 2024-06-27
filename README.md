@@ -73,6 +73,18 @@ docker pull genainerds/gapi:pipertts
 docker create --runtime nvidia --name gapi-pipertts --network host -v ~/gapiData/Gapi-PiperTTS:/home/TTS/vdata genainerds/gapi:pipertts /bin/bash -c "cd /home/TTS && python3 gapi-ms.py [] []"
 docker start gapi-pipertts
 ```
+
+**Ollama**
+
+Oh Yeah! Now in the GenAI LLM (Local) Component you can choose a model and Ollama will try and load it w/ unified interaction made possible by it and our plumbing!
+Note: in ~/gapiData/ there is a Gapi-Ollama folder. In there is a config.txt file that has the websocket url for this container to connect to plus the Micro Service key. So once you start it up you should see it Online in the Micro Services tab of the Gapi UI.
+Also, any models that are downloaded by Ollama in the container will be in this folder too
+```sh
+docker pull genainerds/gapi:ollama
+docker create -it --runtime nvidia --name gapi-ollama --network=host -v ~/gapiData/Gapi-Ollama:/home/ollama/vdata -e OLLAMA_MODELS=/home/ollama/vdata/models -e OLLAMA_LOGS=/home/ollama/vdata/ollama.log genainerds/gapi:ollama /bin/bash -c "./home/ollama/start-all-gapi.sh"
+docker start gapi-ollama
+```
+
 ## Want to Wrap Your Code/model in a Micro Service and Use it in a Workflow?
 
 Go to the Micro Services section of this: [Docs](https://genainerds.com/#/Docs)
