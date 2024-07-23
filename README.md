@@ -18,37 +18,9 @@ Goal: Be the Fastest Way to Prototype and Integrate GenAI on the Edge.
 - Arm 64 w/ Docker support
 - Will run on others in emulated mode
 
-## Installation
+## Local Installation (Coming Soon)
 
-Steps to install Gapi (swap ~/gapiData in all the steps as you please)
-0) Dependencies (Follow Docker install before moving forward)
-```sh
-apt get -y install curl unzip
-```
-1) Create a place where your persistent data wil live
-```sh
-mkdir ~/gapiData
-```    
-2) Download the starting json files
-```sh
-curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiStartingData.zip -o ~/gapiData/gapiStartingData.zip
-```    
-3) Unzip them
-```sh
-unzip ~/gapiData/gapiStartingData.zip
-``` 
-4) Pull it
-```sh
-docker pull genainerds/gapi:arm64
-```
-5) Create a container, map network and bind the folder we created above
-```sh
-docker create --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
-```
-6) Start the docker container
-```sh
-docker start gapi
-```
+Please create a free account on GenAIGapi.com for now to play around. We are getting the Gapi Server Docker image ready!
 
 ## Problems?
 ~/gapiData is your friend. It has all the persistant data plus gapi.log and gapi-error.log from the application server itself.
