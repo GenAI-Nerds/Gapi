@@ -32,6 +32,7 @@ Gapi Server can run on any Jetson Orin or really any computer as the Micro Servi
 
 Gapi Server will run on other environments. Email us at support@GenAINerds.com if that's something you think is worthwhile.
 
+## Installing Gapi Server (Step 1 of 2)
 Explaining the Steps:
 
 1) On the Docker host, create working dir for persistant data
@@ -50,22 +51,44 @@ echo "You may need to hit Enter now. Afterwards the Docker container 'gapi' shou
 
 NOTE: You will need to run some Micro Services before doing anything meaningful, so please review the mini tour below but don't do any of it in the UI untill you complete the setup (instructions at the bottom)
 
+## UI / Login
+![UI](https://genainerds.com/assets/img/gapi-hero.png)
+- Browse in: http://[host-device-ip]:8090
+- User: root
+- Pass: !gapi2024
+- Change password in Settings! Docs shows how to add SSL cert.
+
+## Running the Community Micro Services (Step 2 of 2)
+```
+#1 Login and go to the Micro Services tab
+#2 Follow the instructions in the blue box on that page to download your custom configuration
+#3 Then follow the instructions below that for installing the Micro Service you want
+```
+## Go Through the Workflow Tips
+
+## Creating Your Own Micro Service
+The entire Micro Service zip file is just 4KB with 4 files:
+
+message_handler.py: for you to respond
+message.py: for the streaming binary/json protocol
+gapi-ms: as entry point and handler)
+requirements.txt: defines just asyncio + websockets
+Synopsis below...
+```
+#1 Create logical Micro Service in UI and copy the key
+#2 Download the zip file from the UI
+#3 python gapi-ms.py ws://0.0.0.0:8090/gapi-ws [MICROSERVICE_KEY]
+#4 Refresh the UI to confirm it's online
+#5 Edit the message_handler.py to handle binary+json input and change the output
+#6 Add a Micro Service Node to a Workflow and tie it to your Micro Service. Hit Test.
+```
+
 Troubleshooting:
 
 Keep in mind all data read or written is in ~/gapiData
 Look at ~/gapiData/gapi.log to see what happened (if say the docker run command doesn't work)
 gapiServerConfig.json has all the initial setup
-
-
-
-## Problems?
-~/gapiData is your friend. It has all the persistant data plus gapi.log and gapi-error.log from the application server itself.
-It also has folders for special Docker Micro Service that have the respective configuration and commensurate logging
-
-Post what the logs show as well as ~/gapiData/conf/gapi.log
-```sh
-docker logs gapi
-```
+Post what the logs show as well as ~/gapiData/gapi.log
 
 ## Run on Boot
 For now you can just run "docker start gapi" in your OS startup script
