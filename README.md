@@ -66,7 +66,7 @@ NOTE: You will need to run some Micro Services before doing anything meaningful,
 #3 Then follow the instructions below that for installing the Micro Service you want
 ```
 ## Go Through the Workflow Tips
-![UI]([https://genainerds.com/assets/img/gapi-hero.png](https://genainerds.com/assets/img/WorkflowsHome.png))
+![Tips](https://genainerds.com/assets/img/WorkflowsHome.png)
 
 ## Creating Your Own Micro Service
 The entire Micro Service zip file is just 4KB with 4 files:
