@@ -12,6 +12,12 @@ Goal: Be the Fastest Way to Prototype and Integrate GenAI on the Edge.
 - Real-time, hybrid, binary+json messaging smoothens intra-service calls and reduced latency.
 - A fast path to proving generative AI value to stakeholders in their actual environment.
 
+## Links
+- [Project Page](https://GenAINerds.com/#/Gapi)
+- [1 Min. Video Intro](https://www.youtube.com/watch?si=8Bt47WdUtiTaSZQx&v=6u7_-O1PCt8&feature=youtu.be)
+- [Docs](https://genainerds.com/#/Docs)
+- [Clients](https://github.com/orgs/GenAI-Nerds/repositories)
+
 ## Gapi Server:
 Embeddable API gateway software that runs in the background with a low code workflow UI for testing. The server is a message hub and state machine for workflow 'nodes' that talk to Micro Services. Think of it as connective-tissue for applications.
 ![Gapi Server Diagram](https://genainerds.com/assets/img/GapiDiagram3.png)
@@ -19,11 +25,6 @@ Embeddable API gateway software that runs in the background with a low code work
 Note: A Micro Service is a process that runs some wrapper python scripts that integrates custom code/models into Workflows using a streaming API.
 
 Gapi Server can run on any Jetson Orin or really any computer as the Micro Services connect outbound over secure web sockets. It doesn't use any GPU resources. There is a also a little demo version to skip the Server install (but you'll still need to run your own Micro Services).
-
-- [Project Page](https://GenAINerds.com/#/Gapi)
-- [1 Min. Video Intro](https://www.youtube.com/watch?si=8Bt47WdUtiTaSZQx&v=6u7_-O1PCt8&feature=youtu.be)
-- [Docs](https://genainerds.com/#/Docs)
-- [Clients](https://github.com/orgs/GenAI-Nerds/repositories)
 
 ## What you need to run Gapi Server on NVIDIA Jetson
 - Any Jetson Orin
