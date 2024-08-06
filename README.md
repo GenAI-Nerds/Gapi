@@ -2,7 +2,6 @@
 ## _The Integration Engine for Generative AI_
 
 [Project Page](https://GenAINerds.com/#/Gapi)
-
 [1 Min. Video Intro](https://www.youtube.com/watch?si=8Bt47WdUtiTaSZQx&v=6u7_-O1PCt8&feature=youtu.be)
 
 [Docs](https://genainerds.com/#/Docs)
