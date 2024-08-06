@@ -12,11 +12,11 @@ Goal: Be the Fastest Way to Prototype and Integrate GenAI on the Edge.
 - Real-time, hybrid, binary+json messaging smoothens intra-service calls and reduced latency.
 - A fast path to proving generative AI value to stakeholders in their actual environment.
 
-Gapi Server:
+## Gapi Server:
 Embeddable API gateway software that runs in the background with a low code workflow UI for testing. The server is a message hub and state machine for workflow 'nodes' that talk to Micro Services. Think of it as connective-tissue for applications.
 ![Gapi Server Diagram](https://genainerds.com/assets/img/GapiDiagram3.png)
 
-A Micro Service is a process that runs some wrapper python scripts that integrates custom code/models into Workflows using a streaming API.
+Note: A Micro Service is a process that runs some wrapper python scripts that integrates custom code/models into Workflows using a streaming API.
 
 Gapi Server can run on any Jetson Orin or really any computer as the Micro Services connect outbound over secure web sockets. It doesn't use any GPU resources. There is a also a little demo version to skip the Server install (but you'll still need to run your own Micro Services).
 
@@ -30,7 +30,6 @@ Gapi Server can run on any Jetson Orin or really any computer as the Micro Servi
 - Docker
 - Size: ~1.3GB
 
-
 Gapi Server will run on other environments. Email us at support@GenAINerds.com if that's something you think is worthwhile.
 
 Explaining the Steps:
@@ -41,12 +40,13 @@ Explaining the Steps:
 4) Pull Docker image, create container and start the process (will return console to you)
 
 Copy and Run the Steps:
-
+```
 mkdir ~/gapiData && cd ~/gapiData
 curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiConfigs.zip -o gapiConfigs.zip
 unzip -q gapiConfigs.zip
 docker run -d --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 echo "You may need to hit Enter now. Afterwards the Docker container 'gapi' should be running"
+```
 
 NOTE: You will need to run some Micro Services before doing anything meaningful, so please review the mini tour below but don't do any of it in the UI untill you complete the setup (instructions at the bottom)
 
