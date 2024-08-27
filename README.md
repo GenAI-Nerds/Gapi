@@ -94,3 +94,13 @@ Post what the logs show as well as ~/gapiData/gapi.log
 
 ## Run on Boot
 For now you can just run "docker start gapi" in your OS startup script
+
+## Updating Gapi Server
+Same steps as usual, kill running container, rm the container for space, pull new one and launch anew
+```
+sudo docker kill gapi
+sudo docker rm gapi
+sudo docker pull genainerds/gapi:arm64
+sudo docker run -d --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
+```
+Follow steps above
