@@ -103,4 +103,4 @@ sudo docker rm gapi
 sudo docker pull genainerds/gapi:arm64
 sudo docker run -d --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 ```
-Follow steps above
+
