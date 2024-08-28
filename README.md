@@ -46,7 +46,7 @@ Copy and Run the Steps:
 sudo mkdir ~/gapiData && cd ~/gapiData
 sudo curl -L https://raw.githubusercontent.com/genai-nerds/Gapi/main/gapiConfigs.zip -o gapiConfigs.zip
 sudo unzip -q gapiConfigs.zip
-sudo docker run -d --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
+sudo docker run -d --name gapi --restart unless-stopped --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 sudo echo "You may need to hit Enter now. Afterwards the Docker container 'gapi' should be running"
 ```
 
@@ -101,6 +101,6 @@ Same steps as usual, kill running container, rm the container for space, pull ne
 sudo docker kill gapi
 sudo docker rm gapi
 sudo docker pull genainerds/gapi:arm64
-sudo docker run -d --name gapi --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
+sudo docker run -d --name gapi --restart unless-stopped --network host -v ~/gapiData:/opt/gapi/vdata genainerds/gapi:arm64 /bin/bash -c "cd /opt/gapi/bin && ./startGapi.sh"
 ```
 All your data will remain in tact. Your Micro Services will automatically reconnect.
