@@ -93,7 +93,7 @@ gapiServerConfig.json has all the initial setup
 Post what the logs show as well as ~/gapiData/gapi.log
 
 ## Run on Boot
-For now you can just run "docker start gapi" in your OS startup script
+Update: As of 8/28/2024 both Gapi Server and Community Micro Service containers will automatically restart on OS restart. If you manually stop a container it will NOT restart automatically and it will NOT restart after OS reboot.
 
 ## Updating Gapi Server
 Same steps as usual, kill running container, rm the container for space, pull new one and launch anew
